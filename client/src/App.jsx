@@ -16,6 +16,7 @@ function App() {
   const [lastInput, setLastInput] = useState("")
   const requestId = useRef(0)
 
+
   const handleGenerate = async (input) => {
     setLastInput(input)
     setStatus("loading")
@@ -23,7 +24,8 @@ function App() {
 
     const id = ++requestId.current
     try {
-        const result = await generateStudySet(input)
+      
+      const result = await generateStudySet(input)
 
       if (id !== requestId.current) return;
       

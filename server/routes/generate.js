@@ -50,7 +50,7 @@ router.post("/", async (req, res) => {
     const parsed = safeParse(rawText);
 
     if (!parsed) {
-      return res.status(422).json({ success: false, error: "AI returned malformed JSON" });
+        return res.status(422).json({ success: false, error: "AI returned malformed JSON" });
     }
     if (!isValidShape(parsed)) {
       return res.status(422).json({ success: false, error: "AI response had unexpected shape" });
