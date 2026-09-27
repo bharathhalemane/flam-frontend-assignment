@@ -1,7 +1,7 @@
 const API_URL = import.meta.env.VITE_API_URL
 
 export const generateStudySet = async (input) => {
-    const response = await fetch(API_URL, {
+    const response = await fetch(`${API_URL}/api/generate`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
