@@ -4,7 +4,7 @@ const Quiz = ({ quiz }) => {
     const [questions, setQuestions] = useState(quiz)
     const [currentIndex, setCurrentIndex] = useState(0)
     const [selected, setSelected] = useState(null)
-    const [wrong, setWrong] = useState(false)
+    const [wrong, setWrong] = useState([])
     const [finished, setFinished] = useState(false)
     const [score, setScore] = useState(0)
 
@@ -15,7 +15,7 @@ const Quiz = ({ quiz }) => {
         
         setSelected(option)
         if (option === q.answer) {
-            setScore(score + 1)
+            setScore((s) => s + 1)
         }else{
             setWrong((w) => [...w, q])
         }
@@ -32,7 +32,7 @@ const Quiz = ({ quiz }) => {
 
     const handleRetryWrong = () => {
         setQuestions(wrong)
-        setWrong(null)
+        setWrong([])
         setCurrentIndex(0)
         setSelected(null)
         setScore(0)
@@ -44,7 +44,7 @@ const Quiz = ({ quiz }) => {
             <div className="quiz-result">
                 <h2>Quiz complete</h2>
                 <p>Score: {score} / {questions.length}</p>
-                {wrong.length > 0 ? (
+                {wrong.length !== null ? (
                     <button onClick={handleRetryWrong}>Retry {wrong.length} wrong answer(s)</button>
                 ) : (
                     <p>All correct - nice work!</p>
