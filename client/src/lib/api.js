@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/generate"
+const API_URL = import.meta.env.VITE_API_URL
 
 export const generateStudySet = async (input) => {
     const response = await fetch(API_URL, {
