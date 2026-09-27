@@ -45,7 +45,7 @@ const Quiz = ({ quiz }) => {
                 <h2>Quiz complete</h2>
                 <p>Score: {score} / {questions.length}</p>
                 {wrong.length !== null ? (
-                    <button onClick={handleRetryWrong}>Retry {wrong.length} wrong answer(s)</button>
+                    <button className="button" onClick={handleRetryWrong}>Retry {wrong.length} wrong answer(s)</button>
                 ) : (
                     <p>All correct - nice work!</p>
                 )}
@@ -75,7 +75,7 @@ const Quiz = ({ quiz }) => {
                         )
                     })
                 }</div>
-                {selected && <button className="next-button" onClick={handleNext}>Next</button>}
+                {selected && <button className="button" onClick={handleNext}>Next</button>}
 
             </div>
         )
