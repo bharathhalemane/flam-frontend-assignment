@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 dotenv.config();
 
 const GROQ_API_KEY = process.env.LLM_API_KEY;
-const GROQ_MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+const GROQ_MODEL = process.env.GROQ_MODEL || "openai/gpt-oss-120b";
 
 const SYSTEM_PROMPT = `You are a study-material generator. Given a topic or notes, return ONLY valid JSON, no prose, no markdown, no fences, matching exactly this shape: 
 {
