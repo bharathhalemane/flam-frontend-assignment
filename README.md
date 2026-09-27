@@ -19,8 +19,8 @@ An AI-powered study tool built for the Flam Frontend Internship Assignment. Past
 
 - **Frontend:** React (hooks, functional components), Vite, plain CSS
 - **Backend:** Node.js, Express
-- **AI Provider:** Groq (`llama-3.3-70b-versatile`, OpenAI-compatible API, JSON mode)
-- **Deployment:** Vercel (frontend)
+- **AI Provider:** Groq (`openai/gpt-oss-120b`, OpenAI-compatible API, JSON mode)
+- **Deployment:** Vercel
 
 ## Architecture
 
@@ -65,7 +65,7 @@ Runs on `http://localhost:5173`.
 PORT=5000
 LLM_API_KEY=your_groq_api_key
 LLM_PROVIDER=groq
-GROQ_MODEL=llama-3.3-70b-versatile
+GROQ_MODEL=openai/gpt-oss-120b
 ```
 
 `client` (only needed if the backend URL differs between dev and production — e.g. a `.env` with `VITE_API_URL=https://your-backend-url`):
@@ -132,15 +132,14 @@ The app is designed around the principle that **AI output is untrusted input** �
 
 ## AI Usage Note
 
-[Name the AI tool(s) you actually used — e.g. Claude/ChatGPT — and what for: scaffolding boilerplate, thinking through edge cases for AI-output validation, etc. Being upfront about this counts in your favor per the assignment.]
+I used ChatGPT to help debug and resolve errors I ran into during development (e.g. troubleshooting failed requests, git problem, unexpected AI output during testing), and Claude to help generate and structure the actual code — the backend routes, validation logic, and React components. I reviewed and understand every part of the implementation, and can walk through, modify, or extend any file live.
 
 ## Known Limitations
 
 - The model occasionally generates a quiz answer that's semantically close but not an exact string match to one of its own options — caught by frontend validation and surfaced as an error rather than auto-corrected.
 - No streaming — the full response is generated before anything renders.
 - No persistence — refreshing the page loses the current study set.
-- [Add anything else you noticed during testing]
 
 ## Time Spent
+i spent ~5 hours for creating repository to upload this readme file.
 
-[Your honest total — e.g. "~7 hours" — optionally broken down by phase: setup, backend, frontend, testing/README]
