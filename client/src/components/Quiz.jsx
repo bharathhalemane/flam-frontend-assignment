@@ -75,7 +75,7 @@ const Quiz = ({ quiz }) => {
                         )
                     })
                 }</div>
-                {selected && <button onClick={handleNext}>Next</button>}
+                {selected && <button className="next-button" onClick={handleNext}>Next</button>}
 
             </div>
         )

@@ -13,8 +13,24 @@ body {
   padding: 16px; 
 }
 
+header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 header h1 { 
-  font-size: 1.5rem;
+  font-size: 1.75rem;
+  margin-bottom: 4px;
+}
+header p{
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+button:focus-visible, textarea:focus-visible{
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
 }
 
 .prompt-form {
@@ -44,6 +60,8 @@ header h1 {
   background: #a5b4fc;
   cursor: not-allowed;
 }
+
+.prompt-form button:hover(:disabled) {background: #2563eb}
 
 .state-box {
   text-align : center;
@@ -85,7 +103,14 @@ header h1 {
   justify-content: center;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
+.flashcard:hover{
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+  transform: translate(-2px);
+}
+
 
 .flip-hint{
   font-size: 0.75rem;
@@ -99,6 +124,17 @@ header h1 {
   padding: 16px;
   margin-top: 16px;
 }
+
+.quiz .next-button{
+    background-color: #fff;  
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    transform: translate(-2px);
+}
+
 
 .quiz-options{
   display: flex;
@@ -127,6 +163,9 @@ header h1 {
   border-color: #ef4444;
   color: #ef4444;
 }
+
+.quiz-option:hover:not(:disabled) {border-color: #3b82f6;}
+
 
 @media (max-width: 480px){
   .app{padding:10px}
